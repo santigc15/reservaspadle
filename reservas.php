@@ -1,3 +1,14 @@
+<?php
+if (isset($_POST["fecha"])){
+  var_dump($_POST);
+
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,30 +18,12 @@
     <link rel="stylesheet" href="./assets/css/reservas.css">
     <title>PadelPro</title>
 </head>
+<body>
+  
+<form action="reservas.php" method="POST">
+  <label for="fecha">Selecciona la fecha</label>
+  <input type="date" name="fecha" id="fecha">
+  <input type="submit" value="enviar">
+</form>
+</body>
 
-<div class="grid">
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-  <div class="cell"></div>
-</div>

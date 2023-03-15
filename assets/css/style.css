@@ -3,10 +3,7 @@ body{
 }
 .cabecera{
   width: 65%;
-  height: 20%;
-  border: 1px solid rgb(152, 152, 235);
-  border-radius: 15px;
-  background-color: rgb(202, 243, 229);
+  height: 5%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -15,19 +12,34 @@ body{
   border: 1px solid rgb(132, 132, 229);
   width: 60%;
   height: 45%;
- /* background-color: rgb(238, 223, 202,0.6);*/
   margin: 0 auto;
   display: flex;
   
 }
 .item2{
   border: 1px solid rgb(132, 132, 229);
-  width: 80%;
+  width: 60%;
   height: 45%;
   background-color: rgb(238, 223, 202,0.6);
   margin: 0 auto;
 }
 .item1 img{
+  width: 100%;
+  object-fit: contain;
+}
+
+.item2 img{
+  width: 100%;
+  object-fit: contain;
+}
+.pista{
+  border: 1px solid rgb(132, 132, 229);
+  width: 40%;
+  height: 40%;
+  display: flex;
+  margin: 0 auto;
+}
+.pista img{
   width: 100%;
   object-fit: contain;
 }
