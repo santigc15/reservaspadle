@@ -8,7 +8,11 @@
     <title>PadelPro</title>
 </head>
 <body>
-<header>
-  <img src="./assets/img/logo.png" alt="Imagen">
-  <img src="./assets/img/imagen1.jpg" alt="Imagen">
+<header class="cabecera">
+  <div class="item1"><img src="./assets/img/logo.png" alt="logo"></div>
+  <div class="item2">2</div>
+
 </header>
+
+  
+</body>
