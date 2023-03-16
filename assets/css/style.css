@@ -1,45 +1,131 @@
-body{
-  width: 100%;
-}
-.cabecera{
-  width: 65%;
-  height: 5%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-}
-.item1{
-  border: 1px solid rgb(132, 132, 229);
-  width: 60%;
-  height: 45%;
-  margin: 0 auto;
-  display: flex;
-  
-}
-.item2{
-  border: 1px solid rgb(132, 132, 229);
-  width: 60%;
-  height: 45%;
-  background-color: rgb(238, 223, 202,0.6);
-  margin: 0 auto;
-}
-.item1 img{
-  width: 100%;
-  object-fit: contain;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
-.item2 img{
-  width: 100%;
-  object-fit: contain;
+body {
+	font-family: Arial, sans-serif;
+    background-image: linear-gradient(to right, #afe0a2, #98d178, #86e248);
 }
-.pista{
-  border: 1px solid rgb(132, 132, 229);
-  width: 40%;
-  height: 40%;
-  display: flex;
-  margin: 0 auto;
+
+header {
+	background-color: black;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	height: 100px;
+	padding: 0 20px;
+    margin-bottom: 30px;
 }
-.pista img{
-  width: 100%;
-  object-fit: contain;
+
+.logo {
+	flex: 1;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo img {
+	height: 70px;
+}
+
+main {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.fondo {
+	background-image: url("../img/imagen1.jpg");
+	background-size: cover;
+	height: 400px;
+	position: relative;
+}
+
+.overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.botones {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.botones button {
+	background-color: rgb(12, 12, 12);
+	border: none;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	font-size: 18px;
+	padding: 10px 20px;
+	margin: 0 20px;
+    border-radius: 15px;
+}
+
+.imagenes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 0px;
+}
+
+.imagenes div {
+	margin: 20px;
+	width: calc(40% - 10px);
+	text-align: center;
+}
+
+.imagenes img {
+	max-width: 100%;
+	height: auto;
+}
+
+.imagenes button {
+	background-color: rgb(12, 12, 12);
+	border: none;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	font-size: 18px;
+	padding: 10px 20px;
+	margin-top: 10px;
+    border-radius: 15px;
+}
+
+@media screen and (max-width: 767px) {
+	header {
+		height: auto;
+		flex-direction: column;
+		padding: 20px;
+	}
+
+	.logo {
+	
+        flex: none;
+        margin-bottom: 20px;
+    }
+    
+    .logo img {
+        height: 30px;
+    }
+    
+    .fondo {
+        height: 300px;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .imagenes div {
+        width: calc(90% - 5px);
+    }
+    
+    .botones button {
+        margin: 10px;
+    }
 }
