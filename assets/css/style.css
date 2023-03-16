@@ -6,7 +6,7 @@
 
 body {
 	font-family: Arial, sans-serif;
-    background-image: linear-gradient(to right, #afe0a2, #98d178, #86e248);
+    background-image: linear-gradient(to right, #d0e9c9,  #86e248);
 }
 
 header {
@@ -16,7 +16,7 @@ header {
 	align-items: center;
 	height: 100px;
 	padding: 0 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .logo {
@@ -43,7 +43,7 @@ main {
 }
 
 .overlay {
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(140, 182, 121, 0.2);
 	height: 100%;
 	position: absolute;
 	top: 0;
@@ -101,7 +101,7 @@ main {
 	header {
 		height: auto;
 		flex-direction: column;
-		padding: 20px;
+		padding: 10px;
 	}
 
 	.logo {
@@ -115,7 +115,7 @@ main {
     }
     
     .fondo {
-        height: 300px;
+        height: 100px;
     }
     .container {
         display: flex;
@@ -129,3 +129,45 @@ main {
         margin: 10px;
     }
 }
+
+.login-form {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+	background-color: rgb(208, 233, 201, 0.5);
+	padding: 20px;
+	border-radius: 5px;
+  }
+  
+  .login-form h2 {
+	text-align: center;
+  }
+  
+  .form-group {
+	margin-bottom: 10px;
+  }
+  
+  .form-group label {
+	display: block;
+	margin-bottom: 5px;
+  }
+  
+  .form-group input {
+	width: 100%;
+	padding: 8px;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+  }
+  
+  button[type="submit"] {
+	display: block;
+	width: 100%;
+	padding: 8px;
+	border-radius: 3px;
+	border: none;
+	background-color: #4CAF50;
+	color: white;
+	cursor: pointer;
+  }

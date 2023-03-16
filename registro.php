@@ -1,35 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>PadelPro</title>
+  <title>PaddlePRO</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
-<body>
-<header class="cabecera">
-  <div class="item1"><img src="./assets/img/logo.png" alt="logo"></div>
-  <div class="item2"><img src="./assets/img/imagen1.jpg" alt="logo"></div>
 
-</header>
 <body>
-  
-<div class="form-container">
-      <form action="newuser.php" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" required placeholder="Introduzca su nombre...">
-        <label for="email">Email:</label>
-        <input type="email" name="email" required placeholder="Introduzca su email...">
-        <label for="telefono">Teléfono:</label>
-        <input type="text" name="telefono" required placeholder="Introduzca su telefono...">
-        <label>Contraseña:</label>
-        <input type="password" name="contrasena" required placeholder="Introduzca una contraseña..."> 
-        <input type="submit" name="register" value="Registrar">
-      </form>
+  <header>
+    <div class="logo">
+      <a href="index.php"><img src="./assets/img/logo.png" alt="Logo de la empresa"></a>
     </div>
+  </header>
+
+  <body>
 
 
-</body>
+    <section class="fondo">
+      <div class="overlay">
+
+        <form action="newuser.php" method="post" class="login-form">
+          <h2>Registro de usuario</h2>
+
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Introduzca su nombre...">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" required placeholder="Introduzca su email...">
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="text" name="telefono" required placeholder="Introduzca su telefono...">
+          </div>
+          <div class="form-group">
+            <label>Contraseña:</label>
+            <input type="password" name="contrasena" required placeholder="Introduzca una contraseña...">
+          </div>
+          <button type="submit" name="register" value="Registrar">Registrar</button>
+        </form>
+
+      </div>
+    </section>
+
+  </body>
 
 </html>
