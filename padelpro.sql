@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 17, 2023 at 02:27 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 17-03-2023 a las 20:25:01
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `padelpro`
+-- Base de datos: `padelpro`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `agenda`
+-- Estructura de tabla para la tabla `agenda`
 --
 
 CREATE TABLE `agenda` (
@@ -42,7 +42,7 @@ CREATE TABLE `agenda` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pista`
+-- Estructura de tabla para la tabla `pista`
 --
 
 CREATE TABLE `pista` (
@@ -51,7 +51,7 @@ CREATE TABLE `pista` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `pista`
+-- Volcado de datos para la tabla `pista`
 --
 
 INSERT INTO `pista` (`id`, `nombre`) VALUES
@@ -63,7 +63,7 @@ INSERT INTO `pista` (`id`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservas`
+-- Estructura de tabla para la tabla `reservas`
 --
 
 CREATE TABLE `reservas` (
@@ -71,7 +71,7 @@ CREATE TABLE `reservas` (
   `id_pista` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `fecha` date NOT NULL,
-  `turno` int(11) NOT NULL,
+  `turno` varchar(255) NOT NULL,
   `jugador1` varchar(50) NOT NULL,
   `jugador2` varchar(50) NOT NULL,
   `jugador3` varchar(50) NOT NULL,
@@ -79,20 +79,23 @@ CREATE TABLE `reservas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `reservas`
+-- Volcado de datos para la tabla `reservas`
 --
 
 INSERT INTO `reservas` (`id`, `id_pista`, `id_usuario`, `fecha`, `turno`, `jugador1`, `jugador2`, `jugador3`, `jugador4`) VALUES
-(1, 1, 2, '2023-03-19', 3, 'marta', 'carmen', 'lucia', 'pedro'),
-(2, 1, 3, '2023-03-19', 4, 'alberto', 'gabriel', 'itziar', ''),
-(3, 1, 5, '2023-03-19', 6, 'Pablo', 'Luis', '', ''),
-(4, 1, 4, '2023-03-20', 1, 'Mark', 'Harold', 'Gregorio', 'Anne'),
-(5, 1, 3, '2023-03-21', 5, 'alberto', 'Luis', '', '');
+(1, 1, 2, '2023-03-19', '3', 'marta', 'carmen', 'lucia', 'pedro'),
+(2, 1, 3, '2023-03-19', '2', 'alberto', 'gabriel', 'itziar', ''),
+(3, 1, 5, '2023-03-19', '6', 'Pablo', 'Luis', '', ''),
+(4, 1, 4, '2023-03-20', '1', 'Mark', 'Harold', 'Gregorio', 'Anne'),
+(5, 1, 3, '2023-03-21', '5', 'alberto', 'Luis', '', ''),
+(6, 1, 2, '2023-03-19', '4', 'pablo', 'carlos', 'carmen', 'luis'),
+(7, 1, 4, '2023-03-19', '1', 'pablo', 'luis', 'marta', 'adriana'),
+(8, 2, 4, '2023-03-20', '2', 'maria', 'gabriela', 'lorena', 'alma');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `turnos`
+-- Estructura de tabla para la tabla `turnos`
 --
 
 CREATE TABLE `turnos` (
@@ -101,7 +104,7 @@ CREATE TABLE `turnos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `turnos`
+-- Volcado de datos para la tabla `turnos`
 --
 
 INSERT INTO `turnos` (`id`, `horario`) VALUES
@@ -115,7 +118,7 @@ INSERT INTO `turnos` (`id`, `horario`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -127,7 +130,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `email`, `telefono`, `contrasena`) VALUES
@@ -139,11 +142,11 @@ INSERT INTO `usuarios` (`id`, `nombre`, `email`, `telefono`, `contrasena`) VALUE
 (7, 'Lucia', 'lucia@gmail.com', '988236358', '$2y$10$BRCXVwExwXpMfjQ6j65d5eFN0lh6QfXSO6KXKYMlGGLwzzbRhewMi');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `agenda`
+-- Indices de la tabla `agenda`
 --
 ALTER TABLE `agenda`
   ADD PRIMARY KEY (`id`),
@@ -151,59 +154,59 @@ ALTER TABLE `agenda`
   ADD UNIQUE KEY `final_normal` (`final_normal`);
 
 --
--- Indexes for table `pista`
+-- Indices de la tabla `pista`
 --
 ALTER TABLE `pista`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `reservas`
+-- Indices de la tabla `reservas`
 --
 ALTER TABLE `reservas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `turnos`
+-- Indices de la tabla `turnos`
 --
 ALTER TABLE `turnos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `agenda`
+-- AUTO_INCREMENT de la tabla `agenda`
 --
 ALTER TABLE `agenda`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
--- AUTO_INCREMENT for table `pista`
+-- AUTO_INCREMENT de la tabla `pista`
 --
 ALTER TABLE `pista`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `reservas`
+-- AUTO_INCREMENT de la tabla `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `turnos`
+-- AUTO_INCREMENT de la tabla `turnos`
 --
 ALTER TABLE `turnos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
