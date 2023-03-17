@@ -16,7 +16,7 @@ window.onload=()=>{
             let options="<option>Turnos:</option>";
             let select=document.getElementById("turno");
             for (let index = 0; index < turnos.length; index++) {
-                turnos[index];
+                turnos[index];               
                 options+=`<option value=${turnos[index].id}>${turnos[index].horario}</option>`;
             }
             select.innerHTML=options;

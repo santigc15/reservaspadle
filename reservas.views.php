@@ -20,20 +20,50 @@ $id_pista = $_GET['id'];
     </div>
   </header>
   <main>
-  <section class="fondo">
+    <section class="fondo">
       <div class="overlay">
 
 
-      <form action="#" method="post" class="login-form">
-      <h2>Reserva de pista</h2>
-      <label for="fecha">Fecha:</label>
-      <input type="date" id="fecha" name="fecha">
-      <input type="hidden" name="idpista" value="<?php echo $id_pista; ?>" id="idpista">
-      <label for="turno">Elige la franja horaria:</label>
-      <select name="turno" id="turno">
-        <option value="">Seleccionar</option>
-      </select>
-    </form>
+        <form action="reservafranja.php" method="post" class="login-form-booking">
+          <h2>Reserva de pista</h2>
+          <div class="form-group">
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+          </div>
+          <input type="hidden" name="idpista" value="<?php echo $id_pista; ?>" id="idpista">
+
+          <div class="form-group">
+            <label for="turno">Elige la franja horaria:</label>
+            <select name="turno" id="turno" required>
+              <option value="">Seleccionar</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="jugador1">Jugador 1:</label>
+            <input type="text" name="jugador1" required placeholder="Nombre del jugador 1...">
+          </div>
+          <div class="form-group">
+            <label for="jugador2">Jugador 2:</label>
+            <input type="text" name="jugador2" required placeholder="Nombre del jugador 2...">
+          </div>
+          <div class="form-group">
+            <label for="jugador3">Jugador 3:</label>
+            <input type="text" name="jugador3" required placeholder="Nombre del jugador 3...">
+          </div>
+          <div class="form-group">
+            <label for="jugador4">Jugador 4:</label>
+            <input type="text" name="jugador4" required placeholder="Nombre del jugador 4...">
+          </div>
+
+
+
+
+          <button type="submit" name="reservar" value="Reservar">Reservar</button>
+
+        </form>
+
+
 
 
 
@@ -56,5 +86,3 @@ $id_pista = $_GET['id'];
 </body>
 
 </html>
-
-

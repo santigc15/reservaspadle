@@ -38,7 +38,7 @@ main {
 .fondo {
 	background-image: url("../img/imagen1.jpg");
 	background-size: cover;
-	height: 400px;
+	height: 600px;
 	position: relative;
 }
 
@@ -115,7 +115,7 @@ main {
     }
     
     .fondo {
-        height: 400px;
+        height: 600px;
     }
     .container {
         display: flex;
@@ -174,4 +174,36 @@ main {
 	background-color: #4CAF50;
 	color: white;
 	cursor: pointer;
+  }
+
+
+
+  .login-form-booking .form-group input[type="date"],
+  .login-form-booking .form-group select {
+  width: 100%; /* Hacer que los elementos ocupen todo el ancho disponible */
+  padding: 0.5rem; /* Espacio interior para los elementos */
+  border: 1px solid #ccc; /* Borde del elemento */
+  border-radius: 0.25rem; /* Esquinas redondeadas */
+  background-color: #fff; /* Color de fondo */
+  font-size: 1rem; /* Tamaño de fuente */
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5; /* Altura de línea */
+}
+
+
+
+.login-form-booking {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+  min-width: 300px;
+	background-color: rgb(208, 233, 201, 0.5);
+	padding: 20px;
+	border-radius: 5px;
+  }
+  
+  .login-form-booking h2 {
+	text-align: center;
   }

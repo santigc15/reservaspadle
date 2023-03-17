@@ -23,6 +23,21 @@ class Database
 
 
 
+
+    public $id_pista;
+    public $id_usuario;
+    public $fecha;
+    public $turno;
+
+    public $jugador1;
+    public $jugador2;
+    public $jugador3;
+    public $jugador4;
+
+
+
+
+
     public function __construct()
     {
 
@@ -100,6 +115,42 @@ class Database
             echo "Usuario o contraseña incorrectas";
             header("Location:login.php");
             die();
+        }
+    }
+
+
+
+    public function insertReserva($dbh, $datos)
+    {
+        $this->dbh = $dbh;
+        $this->datos = $datos;
+
+        try {
+            $stmt = $dbh->prepare("INSERT INTO reservas (id_pista, id_usuario, fecha, turno, jugador1, jugador2, jugador3, jugador4) VALUES (:id_pista, :id_usuario, :fecha, :turno, :jugador1, :jugador2, :jugador3, :jugador4)");
+            $stmt->bindParam(':id_pista', $this->id_pista);
+            $stmt->bindParam(':id_usuario', $this->id_usuario);
+            $stmt->bindParam(':fecha', $this->fecha);
+            $stmt->bindParam(':turno', $this->turno);
+            $stmt->bindParam(':jugador1', $this->jugador1);
+            $stmt->bindParam(':jugador2', $this->jugador2);
+            $stmt->bindParam(':jugador3', $this->jugador3);
+            $stmt->bindParam(':jugador4', $this->jugador4);
+
+
+            $this->id_pista = $this->datos['id_pista'];
+            $this->id_usuario = $this->datos['id_usuario'];
+            $this->fecha = $this->datos['fecha'];
+            $this->turno = $this->datos['turno'];
+            $this->jugador1 = $this->datos['jugador1'];
+            $this->jugador2 = $this->datos['jugador2'];
+            $this->jugador3 = $this->datos['jugador3'];
+            $this->jugador4 = $this->datos['jugador4'];
+
+
+            // Ejecutar la consulta
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Error al insertar datos: " . $e->getMessage();
         }
     }
 }
