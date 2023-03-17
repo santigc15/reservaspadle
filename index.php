@@ -25,7 +25,7 @@
 		</section>
 		<section class="imagenes container">
 			<div>
-				<a href="reservas.php?id=1"><img src="./assets/img/pistaAzul.jpg" alt="pistaAzul"></a>
+				<a href="reservas.views.php?id=1"><img src="./assets/img/pistaAzul.jpg" alt="pistaAzul"></a>
 				<a href="reservas.php?id=1"><button>Reservar pista Azul</button></a>
 			</div>
 			<div>

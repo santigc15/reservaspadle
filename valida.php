@@ -10,7 +10,7 @@ if (isset($_POST["login"])) {
     $dbh = $database->dbh;
 
     $nombre=$database->compruebaUser($dbh, $usuario, $contrasena);
-    header("Location:reservas.php");
+    header("Location:reservas.views.php?id=1");
 
 } else {
     require_once("login.php");
