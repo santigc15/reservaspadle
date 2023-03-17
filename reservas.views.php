@@ -26,6 +26,7 @@ $id_pista = $_GET['id'];
   <input type="hidden" name="idpista" value="<?php echo $id_pista; ?>" id="idpista">
   
   <label for="turno">Elige la franja horaria:</label>
+ 
 
 <select name="turno" id="turno">
 
