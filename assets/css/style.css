@@ -115,7 +115,7 @@ main {
     }
     
     .fondo {
-        height: 100px;
+        height: 400px;
     }
     .container {
         display: flex;
@@ -123,6 +123,9 @@ main {
     }
     .imagenes div {
         width: calc(90% - 5px);
+    }
+    .login-form {
+      min-width: 300px;
     }
     
     .botones button {
@@ -136,6 +139,7 @@ main {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 300px;
+  min-width: 300px;
 	background-color: rgb(208, 233, 201, 0.5);
 	padding: 20px;
 	border-radius: 5px;

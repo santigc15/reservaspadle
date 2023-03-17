@@ -15,8 +15,7 @@
     </div>
   </header>
 
-  <body>
-
+  <main>
 
     <section class="fondo">
       <div class="overlay">
@@ -45,7 +44,7 @@
 
       </div>
     </section>
-
-  </body>
+  </main>
+</body>
 
 </html>

@@ -14,30 +14,29 @@
       <a href="index.php"><img src="./assets/img/logo.png" alt="Logo de la empresa"></a>
     </div>
   </header>
+  <main>
 
-  <body>
+  <section class="fondo">
+    <div class="overlay">
 
-    <section class="fondo">
-      <div class="overlay">
-
-        <form action="valida.php" method="post" class="login-form">
-          <h2>Iniciar sesión</h2>
-          <div class="form-group">
-            <label for="email">Usuario:</label>
-            <input type="text" id="email" name="email" required placeholder="Introduzca su email...">
-          </div>
-          <div class="form-group">
-            <label for="password">Contraseña:</label>
-            <input type="password" id="contrasena" name="contrasena" required placeholder="Introduzca su contraseña...">
-          </div>
-          <button type="submit" name="login" value="Login">Iniciar sesión</button>
-        </form>
-
-
-      </div>
-    </section>
+      <form action="valida.php" method="post" class="login-form">
+        <h2>Iniciar sesión</h2>
+        <div class="form-group">
+          <label for="email">Usuario:</label>
+          <input type="text" id="email" name="email" required placeholder="Introduzca su email...">
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña:</label>
+          <input type="password" id="contrasena" name="contrasena" required placeholder="Introduzca su contraseña...">
+        </div>
+        <button type="submit" name="login" value="Login">Iniciar sesión</button>
+      </form>
 
 
-  </body>
+    </div>
+  </section>
+
+</main>
+</body>
 
 </html>
