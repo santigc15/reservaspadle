@@ -7,22 +7,26 @@ window.onload=()=>{
         let fechaSeleccionada=fecha.value;
         let pista=document.getElementById("idpista").value;
         let url="ajax.php?fecha="+fechaSeleccionada+"&pista="+pista;
-        var turnosDisponibles;
+        
         fetch(url)
         .then(data=>data.text())
         .then(datos => {
           
           
-          for (let i = 0; i < datos.length; i++) {
-            
-            const miSelect = document.getElementById('turno');
-            
-            const option = new Option(datos[i].text, datos[i].valueOf);
-            
-            
-            miSelect.add(option);
+          function micallback(datos) {
+            var opciones = datos.slice(1, -1)
+            var opciones = opciones.split(",");
+            var select = document.getElementById("turno");
+            select.innerHTML = "";
+            for (var i = 0; i < opciones.length; i++) {
+              var opcion = document.createElement("option");
+              opcion.value = i;
+              opcion.text = opciones[i].trim();
+              select.add(opcion);
+            }
           }
-        
+
+        micallback(datos);
 
 
 
