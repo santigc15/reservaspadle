@@ -107,12 +107,38 @@ class Database
 
         if (password_verify($contrasena, $usuario['contrasena'])) {
             
-            $nombre_sesion = $usuario['email'];
-            session_name($nombre_sesion);
-            session_start();
-            return $nombre_sesion;
+            //$nombre_sesion = $usuario['email'];
+            return $usuario;
         } else {
+            header("Location:login.php");
+            die();
+        }
+    }
+
+    public function obtenerid($dbh, $usuario, $contrasena)
+    {
+
+        // Consulta preparada para verificar si el usuario existe en la base de datos
+        $sql = "SELECT id FROM usuarios WHERE email = :usuario";
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute(['usuario' => $usuario]);
+
+        // Verificar si se encontró el usuario en la base de datos
+        if ($stmt->rowCount() == 0) {
             echo "Usuario o contraseña incorrectas";
+            header("Location:login.php");
+            die();
+        }
+
+        $usuario = $stmt->fetch();
+
+
+
+        if (password_verify($contrasena, $usuario['contrasena'])) {
+            
+            $iduser = $usuario['id'];
+            return $iduser;
+        } else {
             header("Location:login.php");
             die();
         }

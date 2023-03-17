@@ -1,6 +1,7 @@
 <?php
 
 
+
 if (isset($_POST['reservar'])) {
     require_once("database.php");
 
@@ -8,7 +9,7 @@ if (isset($_POST['reservar'])) {
     $datos = array();
 
     $datos["id_pista"] = $_POST['idpista'];
-    $datos["id_usuario"] = 2;
+    $datos["id_usuario"] = $_POST['iduser'];
     $datos["fecha"] = $_POST['fecha'];
     $datos["turno"] = $_POST['turno'];
     $datos["jugador1"] = $_POST['jugador1'];

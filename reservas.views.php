@@ -1,12 +1,20 @@
 <?php
-//require_once("valida.php");
+session_start();
+
+
 $id_pista = $_GET['id'];
+if (!isset($_SESSION['nombresesion'])) {
+
+  header("location: login.php");
+}else{
+  $id_user=$_SESSION["id"];
+}
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title>PaddlePRO</title>
+  <title>PadelPRO</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
@@ -31,7 +39,7 @@ $id_pista = $_GET['id'];
             <input type="date" id="fecha" name="fecha" required>
           </div>
           <input type="hidden" name="idpista" value="<?php echo $id_pista; ?>" id="idpista">
-
+          <input type="hidden" name="iduser" value="<?php echo $id_user; ?>" id="iduser">
           <div class="form-group">
             <label for="turno">Elige la franja horaria:</label>
             <select name="turno" id="turno" required>

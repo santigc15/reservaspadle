@@ -11,8 +11,8 @@ define('DB_PASS','');
 define('PATH_APP', dirname(dirname(__FILE__)));
 
 //
-define('PATH_URL', 'http://localhost/libreria');
+define('PATH_URL', 'http://localhost/padelpro');
 
-define ('NOMBRESITIO','LIBRERIA4U');
+define ('NOMBRESITIO','PADELPRO');
 
 ?>
