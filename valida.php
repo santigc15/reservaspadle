@@ -18,7 +18,7 @@ if($nombre){
     $_SESSION["id"]=$nombre['id'];
     $_SESSION["nombresesion"]=$nombre['email'];
 
-    header("Location:reservas.views.php?id=1");
+    header("Location:index.php");
 }
 
 
