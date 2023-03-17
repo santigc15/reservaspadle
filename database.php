@@ -82,6 +82,7 @@ class Database
         // Verificar si se encontró el usuario en la base de datos
         if ($stmt->rowCount() == 0) {
             echo "Usuario o contraseña incorrectas";
+            header("Location:login.php");
             die();
         }
 
@@ -97,6 +98,7 @@ class Database
             return $nombre_sesion;
         } else {
             echo "Usuario o contraseña incorrectas";
+            header("Location:login.php");
             die();
         }
     }

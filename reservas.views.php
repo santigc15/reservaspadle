@@ -1,4 +1,5 @@
 <?php
+//require_once("valida.php");
 $id_pista = $_GET['id'];
 ?>
 <!DOCTYPE html>
@@ -19,27 +20,41 @@ $id_pista = $_GET['id'];
     </div>
   </header>
   <main>
-
-  <form>
-  <label for="fecha">Fecha:</label>
-  <input type="date" id="fecha" name="fecha">
-  <input type="hidden" name="idpista" value="<?php echo $id_pista; ?>" id="idpista">
-  
-  <label for="turno">Elige la franja horaria:</label>
- 
-
-<select name="turno" id="turno">
-<option value="">Seleccionar</option>
-</select>
+  <section class="fondo">
+      <div class="overlay">
 
 
+      <form action="#" method="post" class="login-form">
+      <h2>Reserva de pista</h2>
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" name="fecha">
+      <input type="hidden" name="idpista" value="<?php echo $id_pista; ?>" id="idpista">
+      <label for="turno">Elige la franja horaria:</label>
+      <select name="turno" id="turno">
+        <option value="">Seleccionar</option>
+      </select>
+    </form>
 
-</form>
-
-<div id="turnos_disponibles"></div>
 
 
-</main>
+
+
+
+
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+  </main>
 </body>
 
 </html>
+
+

@@ -9,33 +9,17 @@ window.onload=()=>{
         let url="ajax.php?fecha="+fechaSeleccionada+"&pista="+pista;
         
         fetch(url)
-        .then(data=>data.text())
-        .then(datos => {
-          
-          
-          function micallback(datos) {
-            var opciones = datos.slice(1, -1)
-            var opciones = opciones.split(",");
-          
-            var select = document.getElementById("turno");
-            select.innerHTML = "";
-            for (var i = 0; i < opciones.length; i++) {
-              var opcion = document.createElement("option");
-              opcion.value = i;
-              opciones[i] = opciones[i].slice(1, -1);
-              opcion.text = opciones[i].trim();
-              
-              
-              select.add(opcion);
+        .then(data=>data.json())
+        .then(datos=>{
+            turnos=datos;
+            console.log(turnos)
+            let options="<option>Turnos:</option>";
+            let select=document.getElementById("turno");
+            for (let index = 0; index < turnos.length; index++) {
+                turnos[index];
+                options+=`<option value=${turnos[index].id}>${turnos[index].horario}</option>`;
             }
-          }
-
-        micallback(datos);
-
-
-
-
-
+            select.innerHTML=options;
 
         })
         .catch(err => console.log(err));
