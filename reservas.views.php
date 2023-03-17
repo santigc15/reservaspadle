@@ -29,7 +29,7 @@ $id_pista = $_GET['id'];
  
 
 <select name="turno" id="turno">
-
+<option value="">Seleccionar</option>
 </select>
 
 

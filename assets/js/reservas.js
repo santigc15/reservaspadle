@@ -16,12 +16,16 @@ window.onload=()=>{
           function micallback(datos) {
             var opciones = datos.slice(1, -1)
             var opciones = opciones.split(",");
+          
             var select = document.getElementById("turno");
             select.innerHTML = "";
             for (var i = 0; i < opciones.length; i++) {
               var opcion = document.createElement("option");
               opcion.value = i;
+              opciones[i] = opciones[i].slice(1, -1);
               opcion.text = opciones[i].trim();
+              
+              
               select.add(opcion);
             }
           }
